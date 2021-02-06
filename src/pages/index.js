@@ -2,7 +2,7 @@ import React from "react"
 // import styled from "styled-components"
 import { createGlobalStyle } from "styled-components"
 import { ThemeProvider } from "styled-components"
-import { GlobalStyles } from "../components/globalstyles"
+import { GlobalStyles } from "../components/globalStyles"
 import { lightTheme, darkTheme } from "../components/themes"
 
 import HomePage from "../components/homePage"
