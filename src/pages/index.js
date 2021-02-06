@@ -5,9 +5,9 @@ import HomePage from "../components/homePage"
 
 const GlobalStyle = createGlobalStyle `
   body {
-    background-color: #FFFDFA;
+    background-color: #0B0F1D;
     font-family: Montserrat, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: #535353;
+    color: #FFFDFA;
   }
 `
 

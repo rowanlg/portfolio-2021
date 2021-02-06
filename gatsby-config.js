@@ -8,6 +8,15 @@ module.exports = {
   /* Your site config here */
   plugins: [
     `gatsby-plugin-styled-components`,
-    `react-spring`
+    `react-spring`,
+    `react-lottie`,
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/ // Where the animated svgs are.
+        }
+      }
+    }
   ],
 }
