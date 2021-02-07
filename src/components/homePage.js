@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import useWindowSize from "../hooks/useWindowSize"
 import Nav from "../components/navigation"
 import Lottie from "react-lottie"
 import astronaut from "../lotties/astronaut.json"
@@ -30,6 +31,7 @@ const HomePage = styled.div `
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   height: 100vh;
+  width: 100vw;
 `
 
 const DayNightToggle = styled.div `
@@ -39,7 +41,9 @@ const DayNightToggle = styled.div `
   right: 0;
   background-color: #000;
   border-radius: 20px;
-  margin: 1.5rem;
+  margin: 1.8rem;
+  z-index: 7;
+ 
   div {
     cursor: pointer;
     width: 1.5rem;
@@ -48,7 +52,6 @@ const DayNightToggle = styled.div `
     margin-top: 4px;
     margin-left: 5px; 
     background-color: #fff;
-    /* transform: translate(33px, 0); */
   }
 `
 
@@ -125,6 +128,17 @@ export default function Home({themeToggler}) {
     }
   }
 
+  const windowSize = useWindowSize()
+  function setAstronautSize() {
+    if (windowSize === 'sm') {
+      return 225
+    } else if (windowSize === 'md') {
+      return 325
+    } else {
+      return 400
+    } 
+  }
+
   return (
     <HomePage>
 
@@ -138,12 +152,12 @@ export default function Home({themeToggler}) {
           style={dayNightToggleStyle}
         />
       </DayNightToggle>
-
+          
         
       <Lottie
         options={lottieDefaultOptions}
-        height={400}
-        width={400}
+        height={setAstronautSize()}
+        width={setAstronautSize()}
         style={{gridArea: "2 / 1 / 3 / 2", zIndex: "-1", opacity: "0.8"}}
       />
       <HomeText>

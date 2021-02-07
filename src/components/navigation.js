@@ -7,12 +7,12 @@ import { lightTheme, darkTheme } from "../components/themes"
 
 const BurgerContainer = styled.div `
   grid-area: 1 / 1 / 2 / 2;
-  z-index: 998;
+  z-index: 6;
   position: fixed;
 `
 const Burger = styled(animated.div) `
   width: 32px;
-  margin: 1.5rem;
+  margin: 1.8rem;
   cursor: pointer;
   div {
     height: 4px;
@@ -29,6 +29,7 @@ const Navigation = styled(animated.div) `
   left: 0;
   top: 0;
   backdrop-filter: blur(10px);
+  z-index: 5;
 `
 const NavLinks = styled.div `
   width: 100%;

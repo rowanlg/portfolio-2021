@@ -7,6 +7,11 @@ import { lightTheme, darkTheme } from "../components/themes"
 
 import HomePage from "../components/homePage"
 import Bio from "../components/bio"
+import ProjectsSection from "../components/projects"
+import Competencies from "../components/competencies"
+import AboutMeSection from "../components/aboutMe"
+import ContactSection from "../components/contact"
+import Footer from "../components/footer"
 
 // const GlobalStyle = createGlobalStyle `
 //   body {
@@ -24,7 +29,12 @@ export default function Home() {
         {/* <GlobalStyle /> */}
         <HomePage themeToggler={() => theme === 'light' ? setTheme('dark') : setTheme('light')} />
         <Bio theme={theme} />
-        {/* <HomePage themeToggler={() => theme === 'light' ? setTheme('dark') : setTheme('light')} /> */}
+        <AboutMeSection theme={theme} />
+        <Competencies theme={theme} />
+        <ProjectsSection theme={theme} />
+        <ContactSection theme={theme} />
+        <Footer theme={theme} />
+        
     </ThemeProvider>
   )
 }

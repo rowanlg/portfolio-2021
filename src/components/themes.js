@@ -4,6 +4,14 @@ export const lightTheme = {
   toggleBorder: '#FFF',
   background: '#FFFDFA',
   projects: '#F4A259',
+  earth: '#402E2A',
+  lavaRed: '#cf1020',
+  lavaOrange: '#E38800',
+  color1: '#F4A259',
+  color2: '#F4E285',
+  color3: '#3BB5BF',
+  color4: '#BA7BA1',
+  color5: '#535353',
 }
 export const darkTheme = {
   body: '#0B0F1D',
@@ -11,4 +19,12 @@ export const darkTheme = {
   toggleBorder: '#6B8096',
   background: '#0B0F1D',
   projects: '#281E5C',
+  earth: '#251B18',
+  lavaRed: '#cf1020',
+  lavaOrange: '#E38800',
+  color1: '#D36A0D',
+  color2: '#CDAE13',
+  color3: '#22676D',
+  color4: '#86466C',
+  color5: '#1F1F1F',
 }
