@@ -23,23 +23,28 @@ const Spacer = styled.div `
   width: 100%;
 `
 const ContactContainer = styled.div `
-  background: ${theme === 'light' ? lightTheme.body : darkTheme.body};
+  
   
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 4rem 0 6rem 0;
+  padding: 5rem 0rem 4rem 0rem;
   margin: 5rem 0;
-  width: 100%;
+  border-radius: 10px;
+  width: 80%;
   @media only screen and (min-width: 768px) {
     width: auto;
-    padding: 4rem 6rem 6rem 6rem;
-    border-radius: 10px;
+    padding: 5rem 5rem 4rem 5rem;
+    background: ${theme === 'light' ? lightTheme.body : darkTheme.body};
   }
-  h3 {
-    margin-top: -1.5rem;
+  h1 {
+    margin-bottom: 0.6rem;
+  }
+  h5 {
+    margin-bottom: 0.5rem;
     text-align: center;
+    padding: 0 1rem;
   }
 `
 const FormContainer = styled.form `
@@ -58,7 +63,7 @@ const FormContainer = styled.form `
     border: none;
     color: ${theme === 'light' ? lightTheme.text : darkTheme.text};
     /* background: ${theme === 'light' ? darkTheme.body : lightTheme.body}; */
-    font-size: 1.2rem;
+    /* font-size: 0.8rem; */
     padding: 0.5rem;
     ::placeholder {
       color: ${theme === 'light' ? lightTheme.text : darkTheme.text};
@@ -66,9 +71,13 @@ const FormContainer = styled.form `
   }
   .name {
     background-color: ${theme === 'light' ? lightTheme.color1 : darkTheme.color1}; 
+    height: 75%;
+    margin-top: 0.8rem;
   }
   .email {
     background-color: ${theme === 'light' ? lightTheme.color2 : darkTheme.color2}; 
+    height: 75%;
+    margin-top: 0.8rem;
   }
   .message {
     resize: none;
@@ -81,7 +90,11 @@ const FormContainer = styled.form `
   .submit {
     background: ${theme === 'light' ? darkTheme.body : lightTheme.body};
     color: ${theme === 'light' ? darkTheme.text : lightTheme.text};
-    width: 40%;
+    width: 35%;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
   }
 `
@@ -97,7 +110,7 @@ const FormContainer = styled.form `
       {/* <Spacer /> */}
       <ContactContainer>
         <h1>Contact<span style={{color: "#3BB5BF"}}>.</span></h1>
-        <h3>Let's make something awesome!</h3>
+        <h5>Let's make something awesome!</h5>
         <FormContainer name="contact" method="POST" data-netlify="true">
           <input type="hidden" name="form-name" value="contact"></input>
           <input className="name" type="text" name="name" placeholder="Name"></input>

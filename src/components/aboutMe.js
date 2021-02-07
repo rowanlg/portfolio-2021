@@ -15,6 +15,7 @@ const AboutMeSection = ({theme}) => {
   justify-content: center;
   background: ${theme === 'light' ? lightTheme.projects : darkTheme.projects};
   margin-top: -5px;
+  padding: 5rem 0 0 0;
   h1 {
     /* margin-bottom: -2rem; */
     margin-top: -15rem;
@@ -28,17 +29,17 @@ const AboutContent = styled.div `
   margin-bottom: 2rem;
 p {
   color: ${darkTheme.text};
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
   max-width: 80%;
   /* margin: 5rem 2.2rem 0rem 2.2rem;  */
-  font-weight: 500;
+  /* font-weight: 500; */
   @media only screen and (min-width: 600px) {
-    font-size: 1.6rem; 
+    /* font-size: 1.6rem;  */
     /* margin: 5rem 2.2rem 2.2rem 2.2rem;  */
     width: auto;
   }
   @media only screen and (min-width: 1100px) {
-    font-size: 1.6rem; 
+    /* font-size: 1.6rem;  */
     /* margin: 5rem 2.2rem 2.2rem 2.2rem;  */
   }
 }

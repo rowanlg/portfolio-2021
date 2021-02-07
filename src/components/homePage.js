@@ -46,17 +46,17 @@ const DayNightToggle = styled.div `
  
   div {
     cursor: pointer;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.4rem;
+    height: 1.4rem;
     border-radius: 20px;
-    margin-top: 4px;
-    margin-left: 5px; 
+    margin-top: 2px;
+    margin-left: 3px; 
     background-color: #fff;
   }
 `
 
 const HomeText = styled.div `
-  margin-top: 2.8rem;
+  margin-top: 3rem;
   grid-area: 2 / 1 / 3 / 2;
   text-align: center;
   /* text-shadow: 2px 2px 5px rgb(0, 0, 0, 0.5); */
@@ -68,26 +68,26 @@ const HomeText = styled.div `
   user-select: none;
   h1 {
     font-size: 2rem;
-    margin-bottom: -1.2rem;
+    margin-bottom: -0.3rem;
   }
   h2 {
     font-size: 1.2rem;
   }
   @media only screen and (min-width: 600px) {
-    margin-top: 3.5rem;
+    margin-top: 4.5rem;
     h1 {
     font-size: 2.8rem;
-    margin-bottom: -1.6rem;
+    /* margin-bottom: -1.6rem; */
     }
     h2 {
       font-size: 1.4rem;
     }
   }
   @media only screen and (min-width: 768px) {
-    margin-top: 4.8rem;
+    margin-top: 5.5rem;
     h1 {
     font-size: 3.8rem;
-    margin-bottom: -2.2rem;
+    /* margin-bottom: -2.2rem; */
     }
     h2 {
       font-size: 2rem;
@@ -114,7 +114,7 @@ export default function Home({themeToggler}) {
 
   const dayNightToggleStyle = {
     transform: dayNightToggled
-    ? `translate(31px, 0)`
+    ? `translate(39px, 0)`
     : `translate(0, 0)`,
     transition: "all 0.3s ease-in",
   }

@@ -17,6 +17,12 @@ module.exports = {
           include: /assets/ // Where the animated svgs are.
         }
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
   ],
 }

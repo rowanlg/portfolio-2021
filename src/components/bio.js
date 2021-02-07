@@ -29,20 +29,24 @@ const ContentContainer = styled.div `
 const Bio = ({theme}) => {
 
   const CodeSnippet = styled.div `
-  width: 30rem;
-  height: 5rem;
-  background: ${theme === 'light' ? lightTheme.body : darkTheme.body};
+  /* background: ${theme === 'light' ? lightTheme.body : darkTheme.body}; */
   padding: 2rem;
   border-radius: 10px;
+  width: 70%;
+  margin: 2rem;
   /* border: 5px solid ${theme === 'light' ? lightTheme.color3 : darkTheme.color3}; */
+  @media only screen and (min-width: 768px) {
+    width: auto;
+  }
   code {
     
-    font-size: 1.4rem;
+    
     /* margin: 5rem 2.2rem 0rem 2.2rem;  */
     /* margin: 1rem; */
-    font-weight: 500;
+    /* font-weight: 500; */
     @media only screen and (min-width: 600px) {
-      font-size: 1.6rem; 
+      font-size: 1rem;
+      /* font-size: 1.6rem;  */
       /* margin: 5rem 2.2rem 2.2rem 2.2rem;  */
     }
   }

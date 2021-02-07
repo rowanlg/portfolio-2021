@@ -19,7 +19,7 @@ const ProjectsSection = ({theme}) => {
     align-items: center;
     justify-content: center;
     background: ${lightTheme.lavaOrange};
-    margin-top: -5px;
+    margin-top: -15px;
     padding: 10rem 0;
     h1 {
       /* margin-bottom: 5rem;
@@ -49,10 +49,10 @@ const ProjectsContent = styled.div `
 
   > div {
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr;
+    background: ${theme === 'light' ? lightTheme.body : darkTheme.body};
     /* box-shadow: 1px 10px 15px 0px rgba(0,0,0,0.3); */
     height: 15rem;
     @media only screen and (min-width: 768px) {
@@ -61,26 +61,26 @@ const ProjectsContent = styled.div `
   }
   .project-1 {
     grid-column: span 2;
-    background: ${theme === 'light' ? lightTheme.color1 : darkTheme.color1};
+    /* background: ${theme === 'light' ? lightTheme.color1 : darkTheme.color1}; */
   }
   .project-2 {
     grid-column: span 2;
-    background: ${theme === 'light' ? lightTheme.color2 : darkTheme.color2};
+    /* background: ${theme === 'light' ? lightTheme.color2 : darkTheme.color2}; */
   }
   .project-3 {
     grid-column: span 2;
-    background: ${theme === 'light' ? lightTheme.color3 : darkTheme.color3};
+    /* background: ${theme === 'light' ? lightTheme.color3 : darkTheme.color3}; */
   }
   .project-4 {
     grid-column: span 2;
-    background: ${theme === 'light' ? lightTheme.color4 : darkTheme.color4};
+    /* background: ${theme === 'light' ? lightTheme.color4 : darkTheme.color4}; */
     @media only screen and (min-width: 768px) {
       grid-column: span 3;
     }
   }
   .project-5 {
     grid-column: span 2;
-    background: ${theme === 'light' ? lightTheme.color5 : darkTheme.color5};
+    /* background: ${theme === 'light' ? lightTheme.color5 : darkTheme.color5}; */
     @media only screen and (min-width: 768px) {
       grid-column: span 3;
     }
@@ -91,12 +91,14 @@ const ProjectsContent = styled.div `
   return (
     <ProjectsContainer>
       <h1 style={{color: "#FFFDFA"}}>Projects<span style={{color: "#3BB5BF"}}>.</span></h1>
-      <ProjectsContent  style={theme === 'light' ? {background: lightTheme.body} : {background: darkTheme.body}}>
-        <div className="project-1">Hi there 1</div>
-        <div className="project-2">Hi there 2</div>
-        <div className="project-3">Hi there 3</div>
-        <div className="project-4">Hi there 4</div>
-        <div className="project-5">Hi there 5</div>
+      <ProjectsContent>
+        <div className="project-1">
+          
+        </div>
+        <div className="project-2"></div>
+        <div className="project-3"></div>
+        <div className="project-4"></div>
+        <div className="project-5"></div>
       </ProjectsContent>
     </ProjectsContainer>
   )

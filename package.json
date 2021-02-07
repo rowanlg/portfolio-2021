@@ -21,11 +21,14 @@
     "gatsby": "^2.32.2",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-styled-components": "^3.10.0",
+    "gatsby-plugin-typography": "^2.12.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-lottie": "^1.2.3",
     "react-spring": "^8.0.27",
-    "styled-components": "^5.2.1"
+    "react-typography": "^0.16.19",
+    "styled-components": "^5.2.1",
+    "typography": "^0.16.19"
   },
   "devDependencies": {
     "prettier": "2.2.1"

@@ -4,7 +4,7 @@ import { darkTheme, lightTheme } from "./themes"
 
 const Competencies =  ({theme}) => {
   const CompetenciesWrapper = styled.div `
-    background: linear-gradient(180deg, ${theme === 'light' ? lightTheme.earth : darkTheme.earth} 0%, ${lightTheme.lavaRed} 75%);
+    background: linear-gradient(180deg, ${theme === 'light' ? lightTheme.earth : darkTheme.earth} 0%, ${lightTheme.lavaRed} 65%);
   `
   const ContentContainer = styled.div `
   width: 100%;
@@ -13,6 +13,7 @@ const Competencies =  ({theme}) => {
   align-items: center;
   flex-direction: column;
   padding: 2rem 0 5rem 0;
+  margin-top: -10px;
 `
 const CompContent = styled.div `
   max-width: 1000px;
@@ -22,12 +23,12 @@ const CompContent = styled.div `
     justify-content: center;
   }
   li {
-    font-size: 1rem;
+    /* font-size: 1rem; */
     margin: 1.2rem; 
-    font-weight: 500;
+    /* font-weight: 500; */
     color: ${darkTheme.text};
     @media only screen and (min-width: 600px) {
-      font-size: 1.4rem; 
+      /* font-size: 1.4rem;  */
     }
   }
 `

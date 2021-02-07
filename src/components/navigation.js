@@ -44,8 +44,8 @@ const NavLinks = styled.div `
   a {
     /* color: #fff; */
     text-decoration: none;
-    font-size: 2rem;
-    font-weight: 800;
+    font-size: 1.4rem;
+    font-weight: 500;
     /* text-shadow: 2px 2px 2px rgb(0, 0, 0, 0.2); */
     
     :hover {
