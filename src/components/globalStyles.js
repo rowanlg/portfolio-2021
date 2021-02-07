@@ -31,7 +31,7 @@ export const GlobalStyles = createGlobalStyle `
     }
   }
   a {
-    color: ${({ theme }) => theme.color3};
+    color: ${({ theme }) => theme.color1};
     text-decoration: none;
   }
 `

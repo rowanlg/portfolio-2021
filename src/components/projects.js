@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { darkTheme, lightTheme } from "./themes"
 
-
+import AsadoBarca from "../images/asadobarca-thumbnail.jpg"
 
 const ProjectsSection = ({theme}) => {
   // Converts the theme's hex to RGBA for adding opacity to just background not text
@@ -51,10 +51,28 @@ const ProjectsContent = styled.div `
     border-radius: 10px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 2fr 1fr;
-    background: ${theme === 'light' ? lightTheme.body : darkTheme.body};
+    grid-template-rows: 4fr 1fr 1fr;
+    background: ${lightTheme.body};
     /* box-shadow: 1px 10px 15px 0px rgba(0,0,0,0.3); */
     height: 15rem;
+    h4, h6 {
+        text-align: center;
+        grid-row: span 1;
+    }
+    img {
+      border-radius: 10px;
+      width: 90%;
+      margin: 0.8rem auto;
+      grid-row: span 4;
+      /* background-color: ${theme === 'light' ? lightTheme.body : darkTheme.body}; */
+    }
+    :hover {
+      box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.7);
+      /* transition: all 0.2s linear; */
+      img {
+        opacity: 0.5;
+      }
+    }
     @media only screen and (min-width: 768px) {
       height: auto;
     }
@@ -86,14 +104,18 @@ const ProjectsContent = styled.div `
     }
   }
 `
+const CardHoverStyle = {
 
+}
 
   return (
     <ProjectsContainer>
       <h1 style={{color: "#FFFDFA"}}>Projects<span style={{color: "#3BB5BF"}}>.</span></h1>
       <ProjectsContent>
         <div className="project-1">
-          
+          <img src={AsadoBarca} />
+          <h4>Asado Barcelona</h4>
+          <h6>GatsbyJS, Bulma, Sass</h6>
         </div>
         <div className="project-2"></div>
         <div className="project-3"></div>

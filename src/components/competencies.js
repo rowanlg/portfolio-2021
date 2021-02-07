@@ -24,7 +24,7 @@ const CompContent = styled.div `
   }
   li {
     /* font-size: 1rem; */
-    margin: 1.2rem; 
+    margin: 1rem; 
     /* font-weight: 500; */
     color: ${darkTheme.text};
     @media only screen and (min-width: 600px) {

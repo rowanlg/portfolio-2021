@@ -29,20 +29,20 @@ const ContactContainer = styled.div `
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 5rem 0rem 4rem 0rem;
+  padding: rem 0rem 4rem 0rem;
   margin: 5rem 0;
   border-radius: 10px;
   width: 80%;
   @media only screen and (min-width: 768px) {
     width: auto;
-    padding: 5rem 5rem 4rem 5rem;
+    padding: 4rem 4rem 2rem 4rem;
     background: ${theme === 'light' ? lightTheme.body : darkTheme.body};
   }
   h1 {
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.8rem;
   }
   h5 {
-    margin-bottom: 0.5rem;
+    /* margin-bottom: 0.5rem; */
     text-align: center;
     padding: 0 1rem;
   }
@@ -52,40 +52,44 @@ const FormContainer = styled.form `
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   gap: 30px;
-  
-  @media only screen and (min-width: 768px) {
+  width: 100%;
+  /* @media only screen and (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-  }
+  } */
   > input, textarea, button {
     /* box-shadow: 1px 2px 10px rgba(0,0,0,0.3); */
-    border-radius: 5px;
+    /* border-radius: 5px; */
     border: none;
     color: ${theme === 'light' ? lightTheme.text : darkTheme.text};
     /* background: ${theme === 'light' ? darkTheme.body : lightTheme.body}; */
-    /* font-size: 0.8rem; */
+    font-size: 0.8rem;
     padding: 0.5rem;
+    border-bottom: 2px solid ${theme === 'light' ? lightTheme.text : darkTheme.text};
+    :focus {
+      outline: none;
+    }
     ::placeholder {
       color: ${theme === 'light' ? lightTheme.text : darkTheme.text};
     }
   }
   .name {
-    background-color: ${theme === 'light' ? lightTheme.color1 : darkTheme.color1}; 
+    background-color: ${theme === 'light' ? lightTheme.body : darkTheme.body}; 
     height: 75%;
     margin-top: 0.8rem;
   }
   .email {
-    background-color: ${theme === 'light' ? lightTheme.color2 : darkTheme.color2}; 
+    background-color: ${theme === 'light' ? lightTheme.body : darkTheme.body}; 
     height: 75%;
     margin-top: 0.8rem;
   }
   .message {
     resize: none;
     grid-row: span 2;
-    background-color: ${theme === 'light' ? lightTheme.color3 : darkTheme.color3}; 
-    @media only screen and (min-width: 768px) {
+    background-color: ${theme === 'light' ? lightTheme.body : darkTheme.body}; 
+    /* @media only screen and (min-width: 768px) {
       grid-column: span 2;
-    }
+    } */
   }
   .submit {
     background: ${theme === 'light' ? darkTheme.body : lightTheme.body};
@@ -96,6 +100,7 @@ const FormContainer = styled.form `
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    border-radius: 10px;
   }
 `
 

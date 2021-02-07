@@ -54,8 +54,12 @@ const Spacer = styled.div `
     <AboutContainer>
       <h1 style={{color: "#FFFDFA"}}>About Me<span style={{color: "#3BB5BF"}}>.</span></h1>
       <AboutContent>
-        <p>My professional career started in electronics, within a portable speaker company. After around 5 years there, I decided that I needed something more, and stumbled upon web development and design. Instantly I was hooked. From that moment on problem solving, clean design, and writing concise, efficient code became my only direction. And a few years of self-driven learning later, I’m happy to call myself a web developer! </p>
-        <p>My prefered stack is the JAMStack. I love utilising the newest and most exciting technologies, and this stack is everything I was looking for. I love using Javascript libraries like React, with APIs and Markdown, not only as it’s at the forefront of web development, but because it creates blazingly fast web apps and websites, that the traditional CMS model sometimes does not.</p>
+        <p>My professional career started in electronics, at a portable speaker company in Bristol. 
+          After around 5 years there, I decided that I needed something more, and stumbled upon web development and design. 
+          Instantly I was hooked. From that moment on problem solving, clean design, and writing concise, efficient code became my only direction. 
+          And a few years of self-driven learning later, I’m happy to call myself a web developer!</p>
+        <p>My prefered stack is the JAMStack. I love utilising the newest and most exciting technologies, and this stack is everything I was looking for. 
+          I love using Javascript libraries like React, with APIs and Markdown, not only as it’s at the forefront of web development, but because it creates blazingly fast web apps and websites, that the traditional CMS model sometimes does not.</p>
       </AboutContent>
       {/* <Spacer /> */}
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
