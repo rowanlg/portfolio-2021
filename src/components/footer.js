@@ -21,6 +21,10 @@ const Footer = ({theme}) => {
 }
 const BottomFooter = styled.div `
   text-align: center;
+  margin-bottom: -1rem;
+  p {
+    font-size: 0.9rem;
+  }
 `
 const Spacer = styled.div `
   height: 20vh;

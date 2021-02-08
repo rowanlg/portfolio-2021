@@ -12,7 +12,7 @@ const BurgerContainer = styled.div `
 `
 const Burger = styled(animated.div) `
   width: 32px;
-  margin: 1.8rem;
+  margin: 2.2rem 1.8rem;
   cursor: pointer;
   div {
     height: 4px;
@@ -58,6 +58,13 @@ const NavLinks = styled.div `
 
 const Nav = ({darkModeToggle}) => {
 
+  const Bar = styled.div `
+    width: 100vw;
+    height: 8rem;
+    background: ${darkModeToggle ? lightTheme.body : darkTheme.body};
+    background: linear-gradient(180deg, ${darkModeToggle ? lightTheme.body : darkTheme.body} 0%, rgba(11,15,29,0) 90%);
+  `
+
   const [burgerToggled, setBurgerToggled] = React.useState(false)
 
   const burgerStyle = useSpring({
@@ -92,29 +99,31 @@ const Nav = ({darkModeToggle}) => {
   return (
     <>
       <BurgerContainer>
-            <Boop rotation={20} timing={200}>
-              <Burger onClick={() => {
-                setBurgerToggled(!burgerToggled)}} 
-                style={burgerStyle}
-              >
-                <div style={
-                  burgerToggled 
-                  ? {transform: "rotate(45deg)", background: darkModeToggle ? lightTheme.text : darkTheme.text} 
-                  : {background: darkModeToggle ? lightTheme.text : darkTheme.text}}
-                />
-                <div style={
-                  burgerToggled 
-                  ? {opacity: "0", background: darkModeToggle ? lightTheme.text : darkTheme.text} 
-                  : {background: darkModeToggle ? lightTheme.text : darkTheme.text}}
-                />
-                <div style={
-                  burgerToggled 
-                  ? {transform: "rotate(-45deg)", background: darkModeToggle ? lightTheme.text : darkTheme.text} 
-                  : {background: darkModeToggle ? lightTheme.text : darkTheme.text}}
-                />
-              </Burger>
-            </Boop>
-          </BurgerContainer>
+        <Bar>
+          <Boop rotation={20} timing={200}>
+            <Burger onClick={() => {
+              setBurgerToggled(!burgerToggled)}} 
+              style={burgerStyle}
+            >
+              <div style={
+                burgerToggled 
+                ? {transform: "rotate(45deg)", background: darkModeToggle ? lightTheme.text : darkTheme.text} 
+                : {background: darkModeToggle ? lightTheme.text : darkTheme.text}}
+              />
+              <div style={
+                burgerToggled 
+                ? {opacity: "0", background: darkModeToggle ? lightTheme.text : darkTheme.text} 
+                : {background: darkModeToggle ? lightTheme.text : darkTheme.text}}
+              />
+              <div style={
+                burgerToggled 
+                ? {transform: "rotate(-45deg)", background: darkModeToggle ? lightTheme.text : darkTheme.text} 
+                : {background: darkModeToggle ? lightTheme.text : darkTheme.text}}
+              />
+            </Burger>
+          </Boop>
+        </Bar>
+      </BurgerContainer>
 
           
 

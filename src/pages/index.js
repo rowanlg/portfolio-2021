@@ -1,5 +1,6 @@
 import React from "react"
 // import styled from "styled-components"
+import {Helmet} from 'react-helmet'
 import { createGlobalStyle } from "styled-components"
 import { ThemeProvider } from "styled-components"
 import { GlobalStyles } from "../components/globalStyles"
@@ -25,6 +26,11 @@ export default function Home() {
   const [theme, setTheme] = React.useState('dark')
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+      <Helmet>
+        <title>Rowan Gordon | Portfolio</title>
+        <meta name="description" content="Showcasing the work of Rowan Gordon, web developer and designer from Bristol, UK." />
+        {/* <meta name="image" content={image} /> */}
+      </Helmet>
       <GlobalStyles />
         {/* <GlobalStyle /> */}
         <HomePage themeToggler={() => theme === 'light' ? setTheme('dark') : setTheme('light')} />

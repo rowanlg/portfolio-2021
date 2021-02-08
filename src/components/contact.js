@@ -23,8 +23,8 @@ const Spacer = styled.div `
   width: 100%;
 `
 const ContactContainer = styled.div `
-  
-  
+  background: ${theme === 'light' ? lightTheme.body : darkTheme.body};
+  padding: 4rem 2rem 0rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,11 +32,13 @@ const ContactContainer = styled.div `
   padding: rem 0rem 4rem 0rem;
   margin: 5rem 0;
   border-radius: 10px;
-  width: 80%;
-  @media only screen and (min-width: 768px) {
+  width: 95%;
+  @media only screen and (min-width: 400px) {
+    width: 80%;
+  }
+  @media only screen and (min-width: 600px) {
     width: auto;
     padding: 4rem 4rem 2rem 4rem;
-    background: ${theme === 'light' ? lightTheme.body : darkTheme.body};
   }
   h1 {
     margin-bottom: 0.8rem;

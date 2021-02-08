@@ -10,6 +10,20 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `react-spring`,
     `react-lottie`,
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Rowan Gordon's Portfolio`,
+        short_name: `Porfolio`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: `src/images/shaka-icon.png`,
+        theme_color_in_head: false,
+      },
+    },
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
