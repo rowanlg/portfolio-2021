@@ -1,9 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import useWindowSize from "../hooks/useWindowSize"
 import Nav from "../components/navigation"
-import Lottie from "react-lottie"
-import astronaut from "../lotties/astronaut.json"
+import Lottie from "react-lottie-player"
+import astronautJson from "../lotties/astronaut.json"
 
 
 
@@ -70,30 +69,21 @@ const HomeText = styled.div `
     }
   }
 `
-
+const StyledLottie = styled(Lottie) `
+  width: 225px;
+  height: 225px;
+  margin: 0 auto;
+  @media only screen and (min-width: 600px) {
+    width: 325px;
+    height: 325px;
+  }
+  @media only screen and (min-width: 768px) {
+    width: 400px;
+    height: 400px;
+  }
+` 
 
 export default function Home({themeToggler}) {
-  
-
-  const lottieDefaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: astronaut,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice"
-    }
-  }
-
-  const windowSize = useWindowSize()
-  function setAstronautSize() {
-    if (windowSize === 'sm') {
-      return 225
-    } else if (windowSize === 'md') {
-      return 325
-    } else {
-      return 400
-    } 
-  }
 
   return (
     <HomePage>
@@ -101,13 +91,13 @@ export default function Home({themeToggler}) {
       <Nav themeToggler={themeToggler} />
           
         
-      <Lottie
-        options={lottieDefaultOptions}
-        height={setAstronautSize()}
-        width={setAstronautSize()}
+      <StyledLottie
+        loop
+        animationData={astronautJson}
+        play
         style={{gridArea: "2 / 1 / 3 / 2", zIndex: "-1", opacity: "0.8"}}
       />
-      
+
       <HomeText>
         <h1>Rowan Gordon<span style={{color: "#F4A259"}}>.</span></h1>
         <h2>Frontend Developer<span style={{color: "#F4E285"}}>,</span><br /> and Designer<span style={{color: "#3BB5BF"}}>.</span></h2>

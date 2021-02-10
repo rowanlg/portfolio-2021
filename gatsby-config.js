@@ -9,7 +9,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-styled-components`,
     `react-spring`,
-    `react-lottie`,
+    `react-lottie-player`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,
