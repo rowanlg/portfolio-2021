@@ -4,6 +4,8 @@ import { Link } from 'gatsby'
 import styled from "styled-components"
 import { animated, useSpring } from 'react-spring';
 import { lightTheme, darkTheme } from "../components/themes"
+import Day from "../images/day.jpg"
+import Night from "../images/night.jpg"
 
 const BurgerContainer = styled.div `
   grid-area: 1 / 1 / 2 / 2;
@@ -59,13 +61,38 @@ const Bar = styled.div `
   height: 8rem;
   transition: all 0.5s linear;
   position: fixed;
-  background: ${props => props.darkModeToggle ? lightTheme.body : darkTheme.body};
-  background: linear-gradient(180deg, ${props => props.darkModeToggle ? lightTheme.body : darkTheme.body} 0%, rgba(11,15,29,0) 90%);
+  display: flex;
+  justify-content: space-between;
+  background: ${props => props.dayNightToggled ? lightTheme.body : darkTheme.body};
+  background: linear-gradient(180deg, ${props => props.dayNightToggled ? lightTheme.body : darkTheme.body} 0%, rgba(11,15,29,0) 90%);
+`
+const DayNightToggle = styled.div `
+  width: 4rem;
+  height: 2rem;
+  /* position: fixed;
+  right: 0;
+  top: 0; */
+  background-color: #000;
+  border-radius: 20px;
+  margin: 1.8rem;
+  z-index: 7;
+ 
+  div {
+    cursor: pointer;
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 20px;
+    margin-top: 2px;
+    margin-left: 3px; 
+    background-color: #fff;
+  }
 `
 
-const Nav = ({darkModeToggle}) => {
+
+const Nav = ({themeToggler}) => {
   const [visible, setVisible] = React.useState(true)
   const [prevScrollPos, setPrevScrollPos] = React.useState(0)
+  const [dayNightToggled, setDayNightToggled] = React.useState(false)
 
   const handleScroll = () => {
     const currentScrollPos = window.pageYOffset;
@@ -105,7 +132,7 @@ const Nav = ({darkModeToggle}) => {
     opacity: burgerToggled 
     ? "1"
     : "0",
-    background: darkModeToggle
+    background: dayNightToggled
     ? "#FFFDFA"
     : "#0B0F1D",
     config: {
@@ -114,10 +141,32 @@ const Nav = ({darkModeToggle}) => {
     },
   })
 
+
+
+  const dayNightContainerStyle = {
+    backgroundImage: dayNightToggled
+    ? `url(${Day})`
+    : `url(${Night})`,
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    border: dayNightToggled 
+    ? `4px solid #0B0F1D`
+    : `4px solid #FFFDFA`,
+    transition: "all 0.3s ease-in",
+  }
+
+  const dayNightToggleStyle = {
+    transform: dayNightToggled
+    ? `translate(39px, 0)`
+    : `translate(0, 0)`,
+    transition: "all 0.3s ease-in",
+  }
+
   return (
     <>
       <BurgerContainer>
-        <Bar style={visible ? {top: '0'} : {top: '-8rem'}} darkModeToggle={darkModeToggle}>
+        <Bar style={visible ? {top: '0'} : {top: '-8rem'}} dayNightToggled={dayNightToggled}>
           <Boop rotation={20} timing={200}>
             <Burger onClick={() => {
               setBurgerToggled(!burgerToggled)}} 
@@ -125,21 +174,33 @@ const Nav = ({darkModeToggle}) => {
             >
               <div style={
                 burgerToggled 
-                ? {transform: "rotate(45deg)", background: darkModeToggle ? lightTheme.text : darkTheme.text} 
-                : {background: darkModeToggle ? lightTheme.text : darkTheme.text}}
+                ? {transform: "rotate(45deg)", background: dayNightToggled ? lightTheme.text : darkTheme.text} 
+                : {background: dayNightToggled ? lightTheme.text : darkTheme.text}}
               />
               <div style={
                 burgerToggled 
-                ? {opacity: "0", background: darkModeToggle ? lightTheme.text : darkTheme.text} 
-                : {background: darkModeToggle ? lightTheme.text : darkTheme.text}}
+                ? {opacity: "0", background: dayNightToggled ? lightTheme.text : darkTheme.text} 
+                : {background: dayNightToggled ? lightTheme.text : darkTheme.text}}
               />
               <div style={
                 burgerToggled 
-                ? {transform: "rotate(-45deg)", background: darkModeToggle ? lightTheme.text : darkTheme.text} 
-                : {background: darkModeToggle ? lightTheme.text : darkTheme.text}}
+                ? {transform: "rotate(-45deg)", background: dayNightToggled ? lightTheme.text : darkTheme.text} 
+                : {background: dayNightToggled ? lightTheme.text : darkTheme.text}}
               />
             </Burger>
           </Boop>
+
+          <DayNightToggle style={dayNightContainerStyle}>
+            <div onClick={() => {
+              setDayNightToggled(!dayNightToggled)
+              themeToggler()
+              }} 
+              style={dayNightToggleStyle}
+            />
+          </DayNightToggle>
+
+
+
         </Bar>
       </BurgerContainer>
 
@@ -153,7 +214,7 @@ const Nav = ({darkModeToggle}) => {
             <Boop rotation={5} timing={200}>
               <Link 
                 to="/"
-                style={darkModeToggle ? {color: lightTheme.text} : {color: darkTheme.text}}
+                style={dayNightToggled ? {color: lightTheme.text} : {color: darkTheme.text}}
               >
                 Home
               </Link>
@@ -161,7 +222,7 @@ const Nav = ({darkModeToggle}) => {
             <Boop rotation={5} timing={200}>
               <Link 
                 to="/"
-                style={darkModeToggle ? {color: lightTheme.text} : {color: darkTheme.text}}
+                style={dayNightToggled ? {color: lightTheme.text} : {color: darkTheme.text}}
               >
                 Projects
               </Link>
@@ -169,7 +230,7 @@ const Nav = ({darkModeToggle}) => {
             <Boop rotation={5} timing={200}>
               <Link 
                 to="/"
-                style={darkModeToggle ? {color: lightTheme.text} : {color: darkTheme.text}}
+                style={dayNightToggled ? {color: lightTheme.text} : {color: darkTheme.text}}
               >
                 About
               </Link>
@@ -177,7 +238,7 @@ const Nav = ({darkModeToggle}) => {
             <Boop rotation={5} timing={200}>
               <Link 
                 to="/"
-                style={darkModeToggle ? {color: lightTheme.text} : {color: darkTheme.text}}
+                style={dayNightToggled ? {color: lightTheme.text} : {color: darkTheme.text}}
               >
                 Contact
               </Link>

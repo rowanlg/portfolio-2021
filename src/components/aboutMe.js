@@ -2,18 +2,14 @@ import React from "react"
 import styled from "styled-components"
 import { darkTheme, lightTheme } from "./themes"
 
-
-
-const AboutMeSection = ({theme}) => {
- 
-  const AboutContainer = styled.div `
+const AboutContainer = styled.div `
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: ${theme === 'light' ? lightTheme.projects : darkTheme.projects};
+  background: ${props => props.theme === 'light' ? lightTheme.projects : darkTheme.projects};
   margin-top: -5px;
   padding: 5rem 0 0 0;
   h1 {
@@ -50,8 +46,9 @@ const Spacer = styled.div `
   width: 100%;
 `
 
+const AboutMeSection = ({theme}) => {
   return (
-    <AboutContainer>
+    <AboutContainer theme={theme}>
       <h1 style={{color: "#FFFDFA"}}>About Me<span style={{color: "#3BB5BF"}}>.</span></h1>
       <AboutContent>
         <p>My professional career started in electronics, at a portable speaker company in Bristol. 
@@ -63,7 +60,7 @@ const Spacer = styled.div `
       </AboutContent>
       {/* <Spacer /> */}
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill={theme === 'light' ? lightTheme.earth : darkTheme.earth} fill-opacity="1" d="M0,160L48,181.3C96,203,192,245,288,229.3C384,213,480,139,576,106.7C672,75,768,85,864,128C960,171,1056,245,1152,266.7C1248,288,1344,256,1392,240L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        <path fill={theme === 'light' ? lightTheme.earth : darkTheme.earth} fillOpacity="1" d="M0,160L48,181.3C96,203,192,245,288,229.3C384,213,480,139,576,106.7C672,75,768,85,864,128C960,171,1056,245,1152,266.7C1248,288,1344,256,1392,240L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
       </svg>
     </AboutContainer>
   )

@@ -4,13 +4,6 @@ import { darkTheme, lightTheme } from "./themes"
 
 import AsadoBarca from "../images/asadobarca-thumbnail.jpg"
 
-const ProjectsSection = ({theme}) => {
-  // Converts the theme's hex to RGBA for adding opacity to just background not text
-  const hex2rgba = (hex, alpha = 1) => {
-    const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16));
-    return `rgba(${r},${g},${b},${alpha})`;
-  };
-
   const ProjectsContainer = styled.div `
     width: 100%;
     height: 100%;
@@ -64,7 +57,6 @@ const ProjectsContent = styled.div `
       width: 90%;
       margin: 0.8rem auto;
       grid-row: span 4;
-      /* background-color: ${theme === 'light' ? lightTheme.body : darkTheme.body}; */
     }
     :hover {
       box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.7);
@@ -79,31 +71,35 @@ const ProjectsContent = styled.div `
   }
   .project-1 {
     grid-column: span 2;
-    /* background: ${theme === 'light' ? lightTheme.color1 : darkTheme.color1}; */
   }
   .project-2 {
     grid-column: span 2;
-    /* background: ${theme === 'light' ? lightTheme.color2 : darkTheme.color2}; */
   }
   .project-3 {
     grid-column: span 2;
-    /* background: ${theme === 'light' ? lightTheme.color3 : darkTheme.color3}; */
   }
   .project-4 {
     grid-column: span 2;
-    /* background: ${theme === 'light' ? lightTheme.color4 : darkTheme.color4}; */
     @media only screen and (min-width: 768px) {
       grid-column: span 3;
     }
   }
   .project-5 {
     grid-column: span 2;
-    /* background: ${theme === 'light' ? lightTheme.color5 : darkTheme.color5}; */
     @media only screen and (min-width: 768px) {
       grid-column: span 3;
     }
   }
 `
+
+
+const ProjectsSection = ({theme}) => {
+  // Converts the theme's hex to RGBA for adding opacity to just background not text
+  const hex2rgba = (hex, alpha = 1) => {
+    const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16));
+    return `rgba(${r},${g},${b},${alpha})`;
+  };
+
 const CardHoverStyle = {
 
 }

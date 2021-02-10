@@ -4,8 +4,6 @@ import useWindowSize from "../hooks/useWindowSize"
 import Nav from "../components/navigation"
 import Lottie from "react-lottie"
 import astronaut from "../lotties/astronaut.json"
-import Day from "../images/day.jpg"
-import Night from "../images/night.jpg"
 
 
 
@@ -33,28 +31,6 @@ const HomePage = styled.div `
   height: 100vh;
   width: 100vw;
 `
-
-const DayNightToggle = styled.div `
-  width: 4rem;
-  height: 2rem;
-  position: fixed;
-  right: 0;
-  background-color: #000;
-  border-radius: 20px;
-  margin: 1.8rem;
-  z-index: 7;
- 
-  div {
-    cursor: pointer;
-    width: 1.4rem;
-    height: 1.4rem;
-    border-radius: 20px;
-    margin-top: 2px;
-    margin-left: 3px; 
-    background-color: #fff;
-  }
-`
-
 const HomeText = styled.div `
   margin-top: 3rem;
   grid-area: 2 / 1 / 3 / 2;
@@ -97,27 +73,7 @@ const HomeText = styled.div `
 
 
 export default function Home({themeToggler}) {
-  const [dayNightToggled, setDayNightToggled] = React.useState(false)
-
-  const dayNightContainerStyle = {
-    backgroundImage: dayNightToggled
-    ? `url(${Day})`
-    : `url(${Night})`,
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    border: dayNightToggled 
-    ? `4px solid #0B0F1D`
-    : `4px solid #FFFDFA`,
-    transition: "all 0.3s ease-in",
-  }
-
-  const dayNightToggleStyle = {
-    transform: dayNightToggled
-    ? `translate(39px, 0)`
-    : `translate(0, 0)`,
-    transition: "all 0.3s ease-in",
-  }
+  
 
   const lottieDefaultOptions = {
     loop: true,
@@ -142,16 +98,7 @@ export default function Home({themeToggler}) {
   return (
     <HomePage>
 
-      <Nav darkModeToggle={dayNightToggled} />
-
-      <DayNightToggle style={dayNightContainerStyle}>
-        <div onClick={() => {
-          setDayNightToggled(!dayNightToggled)
-          themeToggler()
-          }} 
-          style={dayNightToggleStyle}
-        />
-      </DayNightToggle>
+      <Nav themeToggler={themeToggler} />
           
         
       <Lottie
@@ -160,6 +107,7 @@ export default function Home({themeToggler}) {
         width={setAstronautSize()}
         style={{gridArea: "2 / 1 / 3 / 2", zIndex: "-1", opacity: "0.8"}}
       />
+      
       <HomeText>
         <h1>Rowan Gordon<span style={{color: "#F4A259"}}>.</span></h1>
         <h2>Frontend Developer<span style={{color: "#F4E285"}}>,</span><br /> and Designer<span style={{color: "#3BB5BF"}}>.</span></h2>

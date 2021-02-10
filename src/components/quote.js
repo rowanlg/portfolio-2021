@@ -25,23 +25,21 @@ const ContentContainer = styled.div `
   padding-top: 2rem;
 `
 
+const CodeSnippet = styled.div `
+padding: 2rem;
+border-radius: 10px;
+width: 70%;
+margin: 2rem;
+@media only screen and (min-width: 768px) {
+  width: auto;
+}
+blockquote {
+  text-align: right;
+}
+`
 
 const Quote = ({theme}) => {
 
-  const CodeSnippet = styled.div `
-  /* background: ${theme === 'light' ? lightTheme.body : darkTheme.body}; */
-  padding: 2rem;
-  border-radius: 10px;
-  width: 70%;
-  margin: 2rem;
-  /* border: 5px solid ${theme === 'light' ? lightTheme.color3 : darkTheme.color3}; */
-  @media only screen and (min-width: 768px) {
-    width: auto;
-  }
-  blockquote {
-    text-align: right;
-  }
-`
 
   // Converts the theme's hex to RGBA for adding opacity to just background not text
   const hex2rgba = (hex, alpha = 1) => {
