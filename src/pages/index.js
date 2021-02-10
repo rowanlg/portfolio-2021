@@ -7,7 +7,7 @@ import { GlobalStyles } from "../components/globalStyles"
 import { lightTheme, darkTheme } from "../components/themes"
 
 import HomePage from "../components/homePage"
-import Bio from "../components/bio"
+import Quote from "../components/quote"
 import ProjectsSection from "../components/projects"
 import Competencies from "../components/competencies"
 import AboutMeSection from "../components/aboutMe"
@@ -32,9 +32,10 @@ export default function Home() {
         {/* <meta name="image" content={image} /> */}
       </Helmet>
       <GlobalStyles />
-        {/* <GlobalStyle /> */}
+
+
         <HomePage themeToggler={() => theme === 'light' ? setTheme('dark') : setTheme('light')} />
-        <Bio theme={theme} />
+        <Quote theme={theme} />
         <AboutMeSection theme={theme} />
         <Competencies theme={theme} />
         <ProjectsSection theme={theme} />

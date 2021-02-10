@@ -47,6 +47,10 @@ const ContactContainer = styled.div `
     /* margin-bottom: 0.5rem; */
     text-align: center;
     padding: 0 1rem;
+    font-size: 1rem;
+    @media only screen and (min-width: 768px) {
+      font-size: 1.25rem;
+    }
   }
 `
 const FormContainer = styled.form `
@@ -65,7 +69,7 @@ const FormContainer = styled.form `
     border: none;
     color: ${theme === 'light' ? lightTheme.text : darkTheme.text};
     /* background: ${theme === 'light' ? darkTheme.body : lightTheme.body}; */
-    font-size: 0.8rem;
+    /* font-size: 0.8rem; */
     padding: 0.5rem;
     border-bottom: 2px solid ${theme === 'light' ? lightTheme.text : darkTheme.text};
     :focus {

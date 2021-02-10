@@ -54,18 +54,36 @@ const NavLinks = styled.div `
     }
   }
 `
-
+const Bar = styled.div `
+  width: 100vw;
+  height: 8rem;
+  transition: all 0.5s linear;
+  position: fixed;
+  background: ${props => props.darkModeToggle ? lightTheme.body : darkTheme.body};
+  background: linear-gradient(180deg, ${props => props.darkModeToggle ? lightTheme.body : darkTheme.body} 0%, rgba(11,15,29,0) 90%);
+`
 
 const Nav = ({darkModeToggle}) => {
+  const [visible, setVisible] = React.useState(true)
+  const [prevScrollPos, setPrevScrollPos] = React.useState(0)
 
-  const Bar = styled.div `
-    width: 100vw;
-    height: 8rem;
-    background: ${darkModeToggle ? lightTheme.body : darkTheme.body};
-    background: linear-gradient(180deg, ${darkModeToggle ? lightTheme.body : darkTheme.body} 0%, rgba(11,15,29,0) 90%);
-  `
+  const handleScroll = () => {
+    const currentScrollPos = window.pageYOffset;
+
+    setVisible(currentScrollPos < prevScrollPos || currentScrollPos < 10)
+
+    setPrevScrollPos(currentScrollPos)
+  }
+
+  React.useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+
+  }, [prevScrollPos, visible, handleScroll]);
 
   const [burgerToggled, setBurgerToggled] = React.useState(false)
+
 
   const burgerStyle = useSpring({
     backfaceVisibility: 'hidden',
@@ -99,7 +117,7 @@ const Nav = ({darkModeToggle}) => {
   return (
     <>
       <BurgerContainer>
-        <Bar>
+        <Bar style={visible ? {top: '0'} : {top: '-8rem'}} darkModeToggle={darkModeToggle}>
           <Boop rotation={20} timing={200}>
             <Burger onClick={() => {
               setBurgerToggled(!burgerToggled)}} 

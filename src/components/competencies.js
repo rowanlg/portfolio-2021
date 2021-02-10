@@ -4,7 +4,14 @@ import { darkTheme, lightTheme } from "./themes"
 
 const Competencies =  ({theme}) => {
   const CompetenciesWrapper = styled.div `
-    background: linear-gradient(180deg, ${theme === 'light' ? lightTheme.earth : darkTheme.earth} 0%, ${lightTheme.lavaRed} 65%);
+    background: linear-gradient(180deg, ${theme === 'light' ? lightTheme.earth : darkTheme.earth} 10%, ${lightTheme.lavaRed} 85%);
+    padding-top: 1rem;
+    @media only screen and (min-width: 400px) {
+      background: linear-gradient(180deg, ${theme === 'light' ? lightTheme.earth : darkTheme.earth} 10%, ${lightTheme.lavaRed} 78%);
+    }
+    @media only screen and (min-width: 768px) {
+      background: linear-gradient(180deg, ${theme === 'light' ? lightTheme.earth : darkTheme.earth} 10%, ${lightTheme.lavaRed} 70%);
+    }
   `
   const ContentContainer = styled.div `
   width: 100%;
@@ -12,23 +19,31 @@ const Competencies =  ({theme}) => {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 2rem 0 5rem 0;
+  padding: 4rem 0 0rem 0;
   margin-top: -10px;
+  margin-bottom: -2rem;
+  @media only screen and (min-width: 768px) {
+    padding: 2rem 0 4rem 0;
+  }
 `
 const CompContent = styled.div `
   max-width: 1000px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
   
   @media only screen and (min-width: 768px) {
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
   li {
     /* font-size: 1rem; */
-    margin: 1rem; 
+    margin: 0.5rem; 
     /* font-weight: 500; */
     color: ${darkTheme.text};
-    @media only screen and (min-width: 600px) {
-      /* font-size: 1.4rem;  */
+    @media only screen and (min-width: 768px) {
+      margin: 0.8rem; 
     }
   }
 `

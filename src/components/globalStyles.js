@@ -8,16 +8,16 @@ export const GlobalStyles = createGlobalStyle `
     transition: all 0.5s linear;
     margin: 0;
     overflow-x: hidden;
-    h1 {
-      ${'' /* font-size: 2rem; */}
+    p, li, textarea, input, button {
+      font-size: 0.8rem;
       @media only screen and (min-width: 768px) {
-        ${'' /* font-size: 3rem; */}
+        font-size: 1rem;
       }
     }
-    h3 {
-      ${'' /* font-size: 1rem; */}
+    h1 {
+      font-size: 1.6rem;
       @media only screen and (min-width: 768px) {
-        ${'' /* font-size: 2rem; */}
+        font-size: 2rem;
       }
     }
   }

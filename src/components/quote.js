@@ -1,11 +1,11 @@
 import React from "react"
 import styled from "styled-components"
-import { lightTheme, darkTheme } from "../components/themes"
+import { lightTheme, darkTheme } from "./themes"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../utils/font-awesome';
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
-import Boop from "../components/boop"
+import Boop from "./boop"
 
 const BioPage = styled.div `
   display: flex;
@@ -26,7 +26,7 @@ const ContentContainer = styled.div `
 `
 
 
-const Bio = ({theme}) => {
+const Quote = ({theme}) => {
 
   const CodeSnippet = styled.div `
   /* background: ${theme === 'light' ? lightTheme.body : darkTheme.body}; */
@@ -38,17 +38,8 @@ const Bio = ({theme}) => {
   @media only screen and (min-width: 768px) {
     width: auto;
   }
-  code {
-    
-    
-    /* margin: 5rem 2.2rem 0rem 2.2rem;  */
-    /* margin: 1rem; */
-    /* font-weight: 500; */
-    @media only screen and (min-width: 600px) {
-      font-size: 1rem;
-      /* font-size: 1.6rem;  */
-      /* margin: 5rem 2.2rem 2.2rem 2.2rem;  */
-    }
+  blockquote {
+    text-align: right;
   }
 `
 
@@ -65,7 +56,8 @@ const Bio = ({theme}) => {
       </svg>
       <ContentContainer style={theme === 'light' ? {backgroundColor: hex2rgba(lightTheme.projects, .4)} : {backgroundColor: hex2rgba(darkTheme.projects, .4)}}  >
         <CodeSnippet>
-          <code>“Most of the best programmers are self-taught.” <br/>- Jack Dorsey, Co-Founder of Twitter</code>
+          <blockquote>“Most of the best programmers are self-taught.” <br/><span style={{fontSize: "75%"}}><strong>Jack Dorsey</strong><br/> Co-Founder of Twitter</span></blockquote>
+          {/* <code>“Most of the best programmers are self-taught.” <br/>- Jack Dorsey, Co-Founder of Twitter</code> */}
           {/* <p style={{marginTop: "-1rem", fontSize: "1.4rem"}}>Scroll for projects<span style={{color: "#F4A259", fontSize: "2rem"}}>.</span></p>
           <Boop rotation={20} timing={200}>
             <FontAwesomeIcon icon={faArrowDown} style={{fontSize: "1.5rem", marginTop: "-1.2rem", marginBottom: "2rem", zIndex: "1"}} />
@@ -80,4 +72,4 @@ const Bio = ({theme}) => {
   )
 }
 
-export default Bio
+export default Quote
