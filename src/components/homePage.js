@@ -83,6 +83,7 @@ const StyledLottie = styled(Lottie) `
   }
 ` 
 
+
 export default function Home({themeToggler}) {
 
   return (
@@ -102,6 +103,7 @@ export default function Home({themeToggler}) {
         <h1>Rowan Gordon<span style={{color: "#F4A259"}}>.</span></h1>
         <h2>Frontend Developer<span style={{color: "#F4E285"}}>,</span><br /> and Designer<span style={{color: "#3BB5BF"}}>.</span></h2>
       </HomeText>
+
     </HomePage>
   )
 }

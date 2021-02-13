@@ -7,7 +7,7 @@ export const GlobalStyles = createGlobalStyle `
     ${'' /* font-family: Montserrat, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */}
     transition: all 0.5s linear;
     margin: 0;
-    overflow-x: hidden;
+    ${'' /* overflow-x: hidden; */}
     p, li, textarea, input, button {
       font-size: 0.8rem;
       @media only screen and (min-width: 768px) {

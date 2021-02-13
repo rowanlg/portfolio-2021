@@ -3,13 +3,14 @@ import styled from "styled-components"
 import { darkTheme, lightTheme } from "./themes"
 
 const CompetenciesWrapper = styled.div `
-    background: linear-gradient(180deg, ${props => props.theme === 'light' ? lightTheme.earth : darkTheme.earth} 10%, ${lightTheme.lavaRed} 85%);
+    /* background: linear-gradient(180deg, ${props => props.theme === 'light' ? lightTheme.earth : darkTheme.earth} 10%, ${lightTheme.lavaRed} 85%);
     @media only screen and (min-width: 400px) {
       background: linear-gradient(180deg, ${props => props.theme === 'light' ? lightTheme.earth : darkTheme.earth} 10%, ${lightTheme.lavaRed} 78%);
     }
     @media only screen and (min-width: 768px) {
       background: linear-gradient(180deg, ${props => props.theme === 'light' ? lightTheme.earth : darkTheme.earth} 10%, ${lightTheme.lavaRed} 70%);
-    }
+    } */
+    /* background: ${props => props.theme === 'light' ? lightTheme.waterLight : darkTheme.waterLight}; */
   `
   const ContentContainer = styled.div `
   width: 100%;
@@ -17,7 +18,7 @@ const CompetenciesWrapper = styled.div `
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 5rem 0 0rem 0;
+  padding: 8rem 0 15rem 0;
   /* margin-top: -10px; */
   /* margin-bottom: -2rem; */
   @media only screen and (min-width: 768px) {
@@ -81,12 +82,12 @@ const Competencies =  ({theme}) => {
           
         </CompContent>
       </ContentContainer>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path fill="#cf1020" fillOpacity="1" d="M0,160L62.6,128L125.2,224L187.8,128L250.4,96L313,64L375.7,0L438.3,320L500.9,224L563.5,160L626.1,0L688.7,160L751.3,160L813.9,96L876.5,96L939.1,32L1001.7,96L1064.3,192L1127,128L1189.6,288L1252.2,0L1314.8,224L1377.4,160L1440,192L1440,320L1377.4,320L1314.8,320L1252.2,320L1189.6,320L1127,320L1064.3,320L1001.7,320L939.1,320L876.5,320L813.9,320L751.3,320L688.7,320L626.1,320L563.5,320L500.9,320L438.3,320L375.7,320L313,320L250.4,320L187.8,320L125.2,320L62.6,320L0,320Z"></path>
       </svg>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
   <path fill="#F58A07" fillOpacity="1" d="M0,192L62.6,160L125.2,0L187.8,256L250.4,64L313,288L375.7,160L438.3,224L500.9,288L563.5,160L626.1,224L688.7,96L751.3,0L813.9,160L876.5,128L939.1,288L1001.7,288L1064.3,32L1127,160L1189.6,32L1252.2,320L1314.8,32L1377.4,224L1440,224L1440,320L1377.4,320L1314.8,320L1252.2,320L1189.6,320L1127,320L1064.3,320L1001.7,320L939.1,320L876.5,320L813.9,320L751.3,320L688.7,320L626.1,320L563.5,320L500.9,320L438.3,320L375.7,320L313,320L250.4,320L187.8,320L125.2,320L62.6,320L0,320Z"></path>
-</svg>
+</svg> */}
     </CompetenciesWrapper>
   )
 }

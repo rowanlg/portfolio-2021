@@ -14,7 +14,7 @@ const hex2rgba = (hex, alpha = 1) => {
 
 const BurgerContainer = styled.div `
   grid-area: 1 / 1 / 2 / 2;
-  z-index: 6;
+  z-index: 23;
   position: fixed;
 `
 const Burger = styled(animated.div) `
@@ -36,7 +36,7 @@ const Navigation = styled(animated.div) `
   left: 0;
   top: 0;
   backdrop-filter: blur(10px);
-  z-index: 5;
+  z-index: 21;
 `
 const NavLinks = styled.div `
   width: 100%;
@@ -80,7 +80,7 @@ const DayNightToggle = styled.div `
   background-color: #000;
   border-radius: 20px;
   margin: 1.8rem;
-  z-index: 7;
+  z-index: 20;
  
   div {
     cursor: pointer;

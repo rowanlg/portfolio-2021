@@ -7,7 +7,7 @@ import { GlobalStyles } from "../components/globalStyles"
 import { lightTheme, darkTheme } from "../components/themes"
 
 import HomePage from "../components/homePage"
-import Quote from "../components/quote"
+import Hills from "../components/hills"
 import ProjectsSection from "../components/projects"
 import Competencies from "../components/competencies"
 import AboutMeSection from "../components/aboutMe"
@@ -35,10 +35,10 @@ export default function Home() {
 
 
         <HomePage themeToggler={() => theme === 'light' ? setTheme('dark') : setTheme('light')} />
-        <Quote theme={theme} />
+        <Hills theme={theme} />
         <AboutMeSection theme={theme} />
-        <Competencies theme={theme} />
         <ProjectsSection theme={theme} />
+        {/* <Competencies theme={theme} /> */}
         <ContactSection theme={theme} />
         <Footer theme={theme} />
         

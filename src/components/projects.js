@@ -5,6 +5,11 @@ import { darkTheme, lightTheme } from "./themes"
 import AsadoBarca from "../images/asadobarca-thumbnail.jpg"
 import AsadoBristol from "../images/asadobristol-thumbnail.jpg"
 import BaldFlavours from "../images/baldflavours-thumbnail.jpg"
+import Competencies from "./competencies"
+
+const ProjectsAndComp = styled.div ` 
+  background: linear-gradient(180deg, ${props => props.theme === 'light' ? lightTheme.waterLight : darkTheme.waterLight} 10%, ${props => props.theme === 'light' ? lightTheme.waterDark : darkTheme.waterDark} 70%);
+`
 
 const ProjectsWrapper = styled.div `
   width: 100%;
@@ -13,8 +18,8 @@ const ProjectsWrapper = styled.div `
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: ${lightTheme.lavaOrange};
-  margin-top: -15px;
+  /* background: ${props => props.theme === 'light' ? lightTheme.waterLight : darkTheme.waterLight}; */
+  /* margin-top: -2px; */
   padding: 10rem 0;
   color: ${props => props.theme === 'light' ? lightTheme.text : darkTheme.text};
 `
@@ -75,6 +80,11 @@ const ProjectsContent = styled.div `
 const ProjectImage = styled.img `
   max-width: 12rem;
 `
+const Grid = styled.div `
+  /* display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr; */
+`
 
 
 const ProjectsSection = ({theme}) => {
@@ -115,14 +125,19 @@ const ProjectsSection = ({theme}) => {
   
 
   return (
-    <ProjectsWrapper theme={theme}>
-      <ProjectsContainer theme={theme}>
-        <h1>Projects<span style={{color: "#3BB5BF"}}>.</span></h1>
-        <ProjectsContent theme={theme}>
-          {generateProjects}
-        </ProjectsContent>
-      </ProjectsContainer>
-    </ProjectsWrapper>
+    <ProjectsAndComp theme={theme}>
+      <ProjectsWrapper theme={theme}>
+        <Grid>
+          <ProjectsContainer theme={theme}>
+            <h1>Projects<span style={{color: "#3BB5BF"}}>.</span></h1>
+            <ProjectsContent theme={theme}>
+              {generateProjects}
+            </ProjectsContent>
+          </ProjectsContainer>
+        </Grid>
+      </ProjectsWrapper>
+      <Competencies />
+    </ProjectsAndComp>
   )
 }
 

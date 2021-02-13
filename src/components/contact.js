@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { darkTheme, lightTheme } from "./themes"
-
+import AstronautUnderwater from "../../assets/AstronautUnderwater2.svg"
 
 const ContactWrapper = styled.div `
   width: 100%;
@@ -10,7 +10,7 @@ const ContactWrapper = styled.div `
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg, ${lightTheme.lavaRed} 20%, ${props => props.theme === 'light' ? lightTheme.earth : darkTheme.earth} 75%);  
+  background: ${props => props.theme === 'light' ? lightTheme.waterDark : darkTheme.waterDark};  
 `
 const Spacer = styled.div `
   height: 30vh;
@@ -93,29 +93,49 @@ const FormContainer = styled.form `
     border-radius: 10px;
   }
 `
+const StyledAstronautUnderwater = styled(AstronautUnderwater) `
+  width: 225px;
+  height: 225px;
+  /* transform: rotate(180deg); */
+
+  @media only screen and (min-width: 600px) {
+    width: 325px;
+    height: 325px;
+  }
+  @media only screen and (min-width: 768px) {
+    width: 400px;
+    height: 400px;
+  }
+` 
+const AstronautContainer = styled.div `
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+const Grid = styled.div ` 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+`
 
 const ContactSection = ({theme}) => {
  return (
     <ContactWrapper theme={theme}>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="#F58A07" fillOpacity="1" d="M0,192L62.6,64L125.2,192L187.8,96L250.4,0L313,256L375.7,320L438.3,128L500.9,224L563.5,160L626.1,64L688.7,288L751.3,256L813.9,96L876.5,160L939.1,192L1001.7,64L1064.3,160L1127,32L1189.6,288L1252.2,256L1314.8,256L1377.4,0L1440,96L1440,0L1377.4,0L1314.8,0L1252.2,0L1189.6,0L1127,0L1064.3,0L1001.7,0L939.1,0L876.5,0L813.9,0L751.3,0L688.7,0L626.1,0L563.5,0L500.9,0L438.3,0L375.7,0L313,0L250.4,0L187.8,0L125.2,0L62.6,0L0,0Z"></path>
-      </svg>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="#cf1020" fillOpacity="1" d="M0,224L62.6,96L125.2,288L187.8,64L250.4,32L313,160L375.7,320L438.3,64L500.9,288L563.5,192L626.1,256L688.7,96L751.3,288L813.9,64L876.5,128L939.1,288L1001.7,32L1064.3,64L1127,160L1189.6,288L1252.2,32L1314.8,320L1377.4,224L1440,32L1440,0L1377.4,0L1314.8,0L1252.2,0L1189.6,0L1127,0L1064.3,0L1001.7,0L939.1,0L876.5,0L813.9,0L751.3,0L688.7,0L626.1,0L563.5,0L500.9,0L438.3,0L375.7,0L313,0L250.4,0L187.8,0L125.2,0L62.6,0L0,0Z"></path>
-      </svg>
-      {/* <Spacer /> */}
-      <ContactContainer theme={theme}>
-        <h1>Contact<span style={{color: "#3BB5BF"}}>.</span></h1>
-        <h5>Let's make something awesome!</h5>
-        <FormContainer name="contact" method="POST" data-netlify="true" theme={theme}>
-          <input type="hidden" name="form-name" value="contact"></input>
-          <input className="name" type="text" name="name" placeholder="Name"></input>
-          <input className="email" type="email" name="email" placeholder="Email"></input>
-          <textarea className="message" name="message" placeholder="Say hello!" res="true"></textarea>
-          <button className="submit" type="submit">Send</button>
-        </FormContainer>
-      </ContactContainer>
-      {/* <Spacer /> */}
+      <Grid>
+        <ContactContainer theme={theme}>
+          <h1>Contact<span style={{color: "#3BB5BF"}}>.</span></h1>
+          <h5>Let's make something awesome!</h5>
+          <FormContainer name="contact" method="POST" data-netlify="true" theme={theme}>
+            <input type="hidden" name="form-name" value="contact"></input>
+            <input className="name" type="text" name="name" placeholder="Name"></input>
+            <input className="email" type="email" name="email" placeholder="Email"></input>
+            <textarea className="message" name="message" placeholder="Say hello!" res="true"></textarea>
+            <button className="submit" type="submit">Send</button>
+          </FormContainer>
+        </ContactContainer>
+        <AstronautContainer>
+          <StyledAstronautUnderwater />
+        </AstronautContainer>
+      </Grid>
     </ContactWrapper>
   )
 }
