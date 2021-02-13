@@ -3,122 +3,126 @@ import styled from "styled-components"
 import { darkTheme, lightTheme } from "./themes"
 
 import AsadoBarca from "../images/asadobarca-thumbnail.jpg"
+import AsadoBristol from "../images/asadobristol-thumbnail.jpg"
+import BaldFlavours from "../images/baldflavours-thumbnail.jpg"
 
-  const ProjectsContainer = styled.div `
-    width: 100%;
-    height: 100%;
+const ProjectsWrapper = styled.div `
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: ${lightTheme.lavaOrange};
+  margin-top: -15px;
+  padding: 10rem 0;
+  color: ${props => props.theme === 'light' ? lightTheme.text : darkTheme.text};
+`
+const ProjectsContainer = styled.div `
+  background: ${props => props.theme === 'light' ? lightTheme.body : darkTheme.body};
+  max-width: 95%;
+  margin: 2rem;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0px 7px 25px -10px #0B0F1D;
+  /* border: 10px solid #D63230; */
+  img {
+      border-radius: 10px;
+      margin-bottom: 0;
+      box-shadow: 0px 0px 25px -15px #0B0F1D;
+      transition: all 0.3s linear;
+      :hover {
+        opacity: 0.5;
+      }
+  }
+  h1 {
+    text-align: center;
+    margin-top: 1rem;
+  }
+`
+const ProjectsContent = styled.div `
+  /* border: solid; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+
+  > div {
+    background: ${props => props.theme === 'light' ? lightTheme.body : '#1E1F1F'};
+    box-shadow: 0px 7px 25px -10px #0B0F1D;
+    border-radius: 10px;
+    padding: 0.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: ${lightTheme.lavaOrange};
-    margin-top: -15px;
-    padding: 10rem 0;
-    h1 {
-      /* margin-bottom: 5rem;
-      margin-top: -5rem; */
-    }
-`
-const ProjectsContent = styled.div `
-  width: 70%;
-  min-height: 40rem;
-  padding: 25px;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  gap: 50px;
-  border-radius: 10px;
-
-  @media only screen and (min-width: 768px) {
-    width: 70%;
-    min-height: 35rem;
+    max-width: 13rem;
+    text-align: center;
+    margin: auto;
     
-    padding: 50px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 30px;
-  }
-
-  > div {
-    border-radius: 10px;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 4fr 1fr 1fr;
-    background: ${lightTheme.body};
-    /* box-shadow: 1px 10px 15px 0px rgba(0,0,0,0.3); */
-    height: 15rem;
-    h4, h6 {
-        text-align: center;
-        grid-row: span 1;
+    h4{
+      margin-top: 0.5rem;
+      margin-bottom: 0;
+      font-weight: 500;
+      font-size: 0.8rem;
     }
-    img {
-      border-radius: 10px;
-      width: 90%;
-      margin: 0.8rem auto;
-      grid-row: span 4;
-    }
-    :hover {
-      box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.7);
-      /* transition: all 0.2s linear; */
-      img {
-        opacity: 0.5;
-      }
-    }
-    @media only screen and (min-width: 768px) {
-      height: auto;
+    p {
+      margin-bottom: 0;
+      font-size: 0.6rem;
     }
   }
-  .project-1 {
-    grid-column: span 2;
-  }
-  .project-2 {
-    grid-column: span 2;
-  }
-  .project-3 {
-    grid-column: span 2;
-  }
-  .project-4 {
-    grid-column: span 2;
-    @media only screen and (min-width: 768px) {
-      grid-column: span 3;
-    }
-  }
-  .project-5 {
-    grid-column: span 2;
-    @media only screen and (min-width: 768px) {
-      grid-column: span 3;
-    }
-  }
+`
+const ProjectImage = styled.img `
+  max-width: 12rem;
 `
 
 
 const ProjectsSection = ({theme}) => {
   // Converts the theme's hex to RGBA for adding opacity to just background not text
-  const hex2rgba = (hex, alpha = 1) => {
-    const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16));
-    return `rgba(${r},${g},${b},${alpha})`;
-  };
 
-const CardHoverStyle = {
+  const projects = [
+    {
+      name: "Asado Barcelona",
+      image: AsadoBarca,
+      stack: "GatsbyJS, Bulma, Sass"
+    },
+    {
+      name: "Asado Bristol",
+      image: AsadoBristol,
+      stack: "GatsbyJS, Bulma, Sass"
+    },
+    {
+      name: "Bald Flavours",
+      image: BaldFlavours,
+      stack: "GatsbyJS, Sass, NetlifyCMS, Markdown, MXD"
+    },
+    {
+      name: "Asado Bristol",
+      image: AsadoBristol,
+      stack: "GatsbyJS, Bulma, Sass"
+    },
+  ]
 
-}
+  const generateProjects = projects.map(x => {
+    return (
+      <div key={`divKey${projects.indexOf(x)}`}>
+        <ProjectImage src={projects[projects.indexOf(x)].image} />
+        <h4>{projects[projects.indexOf(x)].name}</h4>
+        <p>{projects[projects.indexOf(x)].stack}</p>
+      </div>
+    )
+  })
+  
 
   return (
-    <ProjectsContainer>
-      <h1 style={{color: "#FFFDFA"}}>Projects<span style={{color: "#3BB5BF"}}>.</span></h1>
-      <ProjectsContent>
-        <div className="project-1">
-          <img src={AsadoBarca} />
-          <h4>Asado Barcelona</h4>
-          <h6>GatsbyJS, Bulma, Sass</h6>
-        </div>
-        <div className="project-2"></div>
-        <div className="project-3"></div>
-        <div className="project-4"></div>
-        <div className="project-5"></div>
-      </ProjectsContent>
-    </ProjectsContainer>
+    <ProjectsWrapper theme={theme}>
+      <ProjectsContainer theme={theme}>
+        <h1>Projects<span style={{color: "#3BB5BF"}}>.</span></h1>
+        <ProjectsContent theme={theme}>
+          {generateProjects}
+        </ProjectsContent>
+      </ProjectsContainer>
+    </ProjectsWrapper>
   )
 }
 

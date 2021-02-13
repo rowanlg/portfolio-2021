@@ -7,6 +7,11 @@ import { lightTheme, darkTheme } from "../components/themes"
 import Day from "../images/day.jpg"
 import Night from "../images/night.jpg"
 
+const hex2rgba = (hex, alpha = 1) => {
+  const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16));
+  return `rgba(${r},${g},${b},${alpha})`;
+};
+
 const BurgerContainer = styled.div `
   grid-area: 1 / 1 / 2 / 2;
   z-index: 6;
@@ -64,7 +69,7 @@ const Bar = styled.div `
   display: flex;
   justify-content: space-between;
   background: ${props => props.dayNightToggled ? lightTheme.body : darkTheme.body};
-  background: linear-gradient(180deg, ${props => props.dayNightToggled ? lightTheme.body : darkTheme.body} 0%, rgba(11,15,29,0) 90%);
+  background: linear-gradient(180deg, ${props => props.dayNightToggled ? hex2rgba(lightTheme.body, 0.5) : hex2rgba(darkTheme.body, 0.5)} 0%, rgba(11,15,29,0) 85%);
 `
 const DayNightToggle = styled.div `
   width: 4rem;
@@ -97,7 +102,7 @@ const Nav = ({themeToggler}) => {
   const handleScroll = () => {
     const currentScrollPos = window.pageYOffset;
 
-    setVisible(currentScrollPos < prevScrollPos || currentScrollPos < 10)
+    setVisible(currentScrollPos < prevScrollPos || currentScrollPos < 100)
 
     setPrevScrollPos(currentScrollPos)
   }
@@ -167,28 +172,30 @@ const Nav = ({themeToggler}) => {
     <>
       <BurgerContainer>
         <Bar style={visible ? {top: '0'} : {top: '-8rem'}} dayNightToggled={dayNightToggled}>
-          <Boop rotation={20} timing={200}>
-            <Burger onClick={() => {
-              setBurgerToggled(!burgerToggled)}} 
-              style={burgerStyle}
-            >
-              <div style={
-                burgerToggled 
-                ? {transform: "rotate(45deg)", background: dayNightToggled ? lightTheme.text : darkTheme.text} 
-                : {background: dayNightToggled ? lightTheme.text : darkTheme.text}}
-              />
-              <div style={
-                burgerToggled 
-                ? {opacity: "0", background: dayNightToggled ? lightTheme.text : darkTheme.text} 
-                : {background: dayNightToggled ? lightTheme.text : darkTheme.text}}
-              />
-              <div style={
-                burgerToggled 
-                ? {transform: "rotate(-45deg)", background: dayNightToggled ? lightTheme.text : darkTheme.text} 
-                : {background: dayNightToggled ? lightTheme.text : darkTheme.text}}
-              />
-            </Burger>
-          </Boop>
+          <div>
+            <Boop rotation={20} timing={200}>
+              <Burger onClick={() => {
+                setBurgerToggled(!burgerToggled)}} 
+                style={burgerStyle}
+              >
+                <div style={
+                  burgerToggled 
+                  ? {transform: "rotate(45deg)", background: dayNightToggled ? lightTheme.text : darkTheme.text} 
+                  : {background: dayNightToggled ? lightTheme.text : darkTheme.text}}
+                />
+                <div style={
+                  burgerToggled 
+                  ? {opacity: "0", background: dayNightToggled ? lightTheme.text : darkTheme.text} 
+                  : {background: dayNightToggled ? lightTheme.text : darkTheme.text}}
+                />
+                <div style={
+                  burgerToggled 
+                  ? {transform: "rotate(-45deg)", background: dayNightToggled ? lightTheme.text : darkTheme.text} 
+                  : {background: dayNightToggled ? lightTheme.text : darkTheme.text}}
+                />
+              </Burger>
+            </Boop>
+          </div>
 
           <DayNightToggle style={dayNightContainerStyle}>
             <div onClick={() => {

@@ -11,18 +11,14 @@ const AboutContainer = styled.div `
   justify-content: center;
   background: ${props => props.theme === 'light' ? lightTheme.projects : darkTheme.projects};
   margin-top: -5px;
-  padding: 5rem 0 0 0;
-  h1 {
-    /* margin-bottom: -2rem; */
-    margin-top: -15rem;
-  }
+  
 `
 const AboutContent = styled.div `
   max-width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 2rem;
+  padding: 5rem 0 5rem 0;
 p {
   color: ${darkTheme.text};
   /* font-size: 1.2rem; */
@@ -49,8 +45,8 @@ const Spacer = styled.div `
 const AboutMeSection = ({theme}) => {
   return (
     <AboutContainer theme={theme}>
-      <h1 style={{color: "#FFFDFA"}}>About Me<span style={{color: "#3BB5BF"}}>.</span></h1>
       <AboutContent>
+        <h1 style={{color: "#FFFDFA"}}>About Me<span style={{color: "#3BB5BF"}}>.</span></h1>
         <p>My professional career started in electronics, at a portable speaker company in Bristol. 
           After around 5 years there, I decided that I needed something more, and stumbled upon web development and design. 
           Instantly I was hooked. From that moment on problem solving, clean design, and writing concise, efficient code became my only direction. 
